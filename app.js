@@ -1,23 +1,46 @@
-//Cat//
+
+const mainContainerIndex = document.getElementById('mainContainerIndex');
 const feedBtn = document.getElementById('feedBtn');
 const sleepBtn = document.getElementById('sleepBtn');
 const playBtn = document.getElementById('playBtn');
+const pokeBtn = document.getElementById('pokeBtn');
+const buttonContainer = document.getElementById('buttonContainer');
+
+const gameTitle = document.getElementById ('gameTitle');
+const game = document.getElementById ('game');
 const message = document.getElementById('message');
+
+
 const catPic = document.getElementById('catPic');
+const catContainer = document.getElementById('catContainer');
+const slothContainer = document.getElementById('slothContainer');
+const alienContainer = document.getElementById('alienContainer');
 let insertName = document.getElementById('insertName');
-let petName;
+let petName = document.getElementsByClassName('window');
 
-//testing out username input
-// const petName = document.getElementById('petName');
+const restart = document.getElementById('restart');
 
 
-//Testing user name input//
-// petName.addEventListener("DOMContentLoaded", () =>{
-//     window.prompt("Enter your pets name: ");
-//     alert(`Your pets name is  ${petName}`);
-//     })
 
-// function that asks user for name of pet
+//Show||Hide Content Functions//
+const hide = (i)=>{
+	i.style.display = "none";
+}
+
+const show = (i)=>{
+	i.style.display = "block";
+}
+
+//Hide//
+hide(buttonContainer);
+hide(gameTitle);
+hide(catContainer);
+hide(slothContainer);
+hide(alienContainer);
+hide(restart);
+
+
+// function that asks user for name of pet//
 const getName = () => {
     petName = prompt("Aw, great choice! Now enter a name for your pet.");
     while (petName.length === 0) {
@@ -25,99 +48,93 @@ const getName = () => {
        petName = prompt("Your pet name:");
     }
  };
- 
-
-//Cat Class//
-class CyberPet {
-    constructor(petType){
-        this._petType = petType;
-        this._sleepy = 40;
-        this._hungry = 40;
-        this._bored = 40;
-    }
-    get petType(){
-        return this._petType;
-    }
-    get hungry() {
-        return this._hungry;
-    }
-    get energy(){
-        return this._sleepy;
-    }
-
-    feed() {
-        this._hungry -= 6;
-        this._sleepy += 3;
-    
-    if (this._hungry >= 80){
-        message.textContent = `your cyber pet ${petName} is hungry`
-    }else if (this._hungry <=0){
-        message.textContent = `your cyber pet ${petName} is full`
-    }else{
-        message.textContent = `your cyber pet ${petName} is eating. Hunger levels at ${this._hungry}`
-    }   
-}
-    sleep() {
-        this._sleepy -= 6;
-        this._bored += 3;
-
-    if (this._sleepy >= 80) {
-        message.textContent = `your cyber pet ${petName} is tired.`
-    }else if (this._sleepy <=0) {
-        message.textContent = `your cyber pet ${petName} is fully rested.`
-    }else{
-        message.textContent = `your cyber pet ${petName} is sleeping. Sleepy levels at ${this._sleepy}`
-    }
-}
-    play() {
-        this._sleepy += 6;
-        this._hungry += 3;
-        this._bored -= 5;
-
-    if (this._bored >= 80) {
-        message.textContent = `your cyber pet ${petName}, is bored.`
-    }else if (this._bored <= 0) {
-        message.textContent = `your cyber pet ${petName}, is happy.`
-    }else { 
-        message.textContent = `your cyber pet ${petName} is playing. Boredom levels at ${this._bored}`
-
-    }
-
-    }
-} 
-
-class Cat extends CyberPet {
-    constructor()
-}
 
 
 
 
 
-
-
+//Main Buttons//
 
 catPic.addEventListener("click", () =>{
+    
+    hide(mainContainerIndex);
     getName();
+    pet = new Cat (petName);
+    // defined new pet as cat^
+
+    show(catContainer);
+    show(buttonContainer);
+    show(gameTitle);
+    show(restart);
+    
+    audioCat.src = "sounds/Cat.mp3";
+
 })
 
-//Cat Event Listener//
-const cat = new CyberPet("cat1");
+slothPic.addEventListener("click", () =>{
+    hide(mainContainerIndex);
+    getName();
+    pet = new Sloth (petName);
+
+    show(slothContainer);
+    show(buttonContainer);
+    show(gameTitle);
+    show(restart);
+
+    audioSloth.src ="sounds/Sloth.mov"
+
+})
+
+
+
+alienPic.addEventListener("click", (event) => {
+    hide(mainContainerIndex);
+    getName();
+    pet = new Alien (petName);
+
+    show(alienContainer);
+    show(buttonContainer);
+    show(gameTitle);
+    show(restart);
+
+    audioAlien.src ="sounds/Alien.mp3"
+});
+
+
+
+
+
+
+
+//Event Listener//
+// const cat = new CyberPet("cat1");
 
 
 feedBtn.addEventListener("click", () =>{
-    cat.feed()
+    pet.feed()
 })
 
 sleepBtn.addEventListener("click", () =>{
-    cat.sleep()
+    pet.sleep()
 })
 
 playBtn.addEventListener("click", () =>{
-    cat.play()
+    pet.play()
 })
+pokeBtn.addEventListener("click",() =>{
+    pet.poke()
+})
+// defined pet as new cat and changed from cat.feed() cat.sleep() and cat.play() to cat.sleep() to pet.feed()
+
+
+//Event Listener Sound//
 
 
 
 
 
+//re-start button//
+
+restart.addEventListener("click", () => {
+    window.location.reload()
+})

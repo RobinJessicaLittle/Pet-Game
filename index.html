@@ -11,76 +11,88 @@
 <!---Index-->
 
 <body>
-	<div class = "mainContainerIndex">
+	<div id = "mainContainerIndex">
 
-		<h1> Virtual Pet</h1>
+		<h1 id = 'mainTitle'> Virtual Pet</h1>
 
 		<div class = "screenIndex">
 
-			<p class = "selectPet"> Click to select your pet</p>
+			<p class = "selectPet"> Click to Select Your Pet</p>
 
 			<div id = "petButtonContainer">
 				
-				<button id = 'catPic'><a href="cat.html" target = "_blank"> <img src="images/catImage2.png" alt="link"><br>  
-					</a></button>
-				
-				<button id = 'slothPic'><a href="sloth.html" target = "_blank"> <img src="images/slothImage2.png" alt="link"><br> <!---select better images--> 
-					</a></button>
+                <button id = 'catPic'><img class= "pics" src="https://cdn.dribbble.com/users/26232/screenshots/2833060/media/f705417febaa8931bf12b1f64630d82a.gif" alt="link"><audio id = "audioCat" autoplay = "false"></audio</button>    <!---select better images--> 
+                
+				<button id = 'slothPic'><img class= "pics"src="https://i.pinimg.com/originals/f5/83/9f/f5839f637f02fbc1f59455a95d632e39.gif" alt="link"><audio id = "audioSloth" autoplay = "false"></audio</button>
+	
+				<button id ='alienPic'><img class= "pics" src="https://cdn.dribbble.com/users/1438727/screenshots/9340805/media/063c0d61152c5cccddbade49f95605b9.gif" alt="link"><audio id = "audioAlien" autoplay = "false"></audio</button>
 
-				<button id ='alienPic'><a href="alien.html" target = "_blank"> <img src="images/AlienImage2.png" alt="link"><br>
-					</a></button>
-					<p><span class="window">Name: </span><span id="insert-name"></span></p>
+				<p><span class="window"></span><span id="insert-name"></span></p>
 
-				</div>
+			</div>
+	</div>
+</div> 
 
 
+<!---Cyber pet title-->
 
+			<h2 id = 'gameTitle'>Your Cyber Pet</h2>
+
+
+<!---Re-start button-->
+	
+<button id = "restart">Start Again</button>
+
+<div id = 'game'>
+	
+	<p id= "message"></p>    
+
+<!---Cat-->
+
+
+			<div id = "catContainer">
+		
+				<div id="screen">
+		
+				 <img id = "catImage" src = "https://cdn.dribbble.com/users/26232/screenshots/2833060/media/f705417febaa8931bf12b1f64630d82a.gif"> <!---add image--> 
+
+				</div> 
+			</div>
+
+<!---Sloth-->
+
+			<div id = "slothContainer">
+		
+				<div id="screenSloth">
+		
+					<img id = "slothImage" src = "https://i.pinimg.com/originals/f5/83/9f/f5839f637f02fbc1f59455a95d632e39.gif" alt = "sloth image">              <!---add image--> 
+
+				</div> 
+			</div>
+
+<!---Alien-->
+			<div id = "alienContainer">
+		
+				<div id="screenAlien">
+		
+					<img id = "alienImage" src = "https://cdn.dribbble.com/users/1438727/screenshots/9340805/media/063c0d61152c5cccddbade49f95605b9.gif">          <!---add image--> 
+
+
+					</div>
+			</div>
+</div>
+<!---action button-->
 			<div id = "buttonContainer">
 				<button id="feedBtn">Feed</button>
 				<button id="sleepBtn">Sleep</button>
 				<button id="playBtn">Play</button>
-			</div>
-
-<!---Cyber pet title-->
-
-			<h1>Cyber pet</h1>
-
-
-<!---Cat-->
-
-			<div class = "catContainer">
-		
-				<div id="screen">
-					<p id= "message"></p>    
-		
-				 <img id = "catImage" src = "images/catImage.png"> <!---add image--> 
-
-				</div> 
-
-<!---Sloth-->
-
-				<div class = "slothContainer">
-			
-					<div id="screenSloth">
-						<p id= "messageSloth"></p>
-			
-					 <img id = "slothImage" src = "">              <!---add image--> 
-
-					</div> 
-
-<!---Alien-->
-					<main class = "alienContainer">
-				
-						<div id="screenAlien">
-							<p id= "messageAlien"></p>
-				
-						 <img id = "alienImage" src = "">          <!---add image--> 
-
-						 </div>
-				
-						</div> 
+				<button id="pokeBtn">Poke</button>
+			</div>			
 			
 	<script src = app.js></script>
+	<script src = petapp.js></script>
 </body>
 </html>
+
+<!-- changed message class to id and moved buttons to the bottom of the screen -->
 
