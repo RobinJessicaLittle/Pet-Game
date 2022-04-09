@@ -97,7 +97,7 @@ alienPic.addEventListener("click", (event) => {
     show(gameTitle);
     show(restart);
 
-    audioAlien.src ="sounds/Alien.mp3"
+    audioAlien.src ="sounds/Alien1.mp3"
 });
 
 

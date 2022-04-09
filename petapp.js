@@ -66,6 +66,9 @@ class Cat extends CyberPet {
     poke() {
         this._bored += 6; 
         message.textContent = `Poking your pet ${petName}, makes them playful!`
+        pokeBtn.addEventListener("click",() =>{
+            audioAlien.src ="sounds/Cat.mp3"
+        })
     } 
 }
 
@@ -77,6 +80,9 @@ class Sloth extends CyberPet {
     poke(){
         this._sleepy += 6;
         message.textContent = `Poking your pet ${petName}, was exhausting. They need to roll over and have a nap.`
+        pokeBtn.addEventListener("click",() =>{
+            audioAlien.src ="sounds/Sloth.mov"
+        })
     }
 }
 
@@ -87,5 +93,8 @@ class Alien extends CyberPet {
     }
     poke(){
         message.textContent = `Your pet ${petName} does not like being poked! Be careful or he will abduct you.`
+        pokeBtn.addEventListener("click",() =>{
+            audioAlien.src ="sounds/Alien.mp3"
+        })
     }
 }
